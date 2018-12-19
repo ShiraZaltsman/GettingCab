@@ -1,31 +1,35 @@
 package entities;
 
-        import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat;
 enum RideStatus {Available,InProcess,Done};
 
 public class Ride {
-    private int RideID;//זה מספר רץ שהקונסטרקטור מכניס
+
+    private  static long RideID=0;//זה מספר רץ שהקונסטרקטור מכניס
+    public static long generateId() {
+        return ++RideID;
+    }
     private RideStatus Status;
     private String StartPoint;
     private String EndPoint;
-    private SimpleDateFormat StartTime = new SimpleDateFormat("kk:mm:ss");
-    private SimpleDateFormat EndTime = new SimpleDateFormat("kk:mm:ss");
+    private String StartTime;
+    private String EndTime;
     private String ClientName;
-    private long ClientPhoneNumber;
+    private String ClientPhoneNumber;
     private String ClientEmail;
 
     public Ride() {
-        RideID = 0;//לטפל בזה
+        this.generateId();
         this.Status = RideStatus.Available;//צריך לבדוק איך זה עובד
         this.StartPoint = "";
         this.EndPoint = "";
-        this.StartTime = new SimpleDateFormat("00:00:00");
-        this.EndTime = new SimpleDateFormat("00:00:00");
+        this.StartTime ="";
+        this.EndTime = "";
         this.ClientName = "";
-        this.ClientPhoneNumber = 0;
+        this.ClientPhoneNumber ="";
         this.ClientEmail = "";
     }
-    public Ride( RideStatus status, String startPoint, String endPoint, SimpleDateFormat startTime, SimpleDateFormat endTime, String clientName, long clientPhoneNumber, String clientEmail) {
+    public Ride( RideStatus status, String startPoint, String endPoint, String startTime, String endTime, String clientName, String clientPhoneNumber, String clientEmail) {
         RideID = 0;//לטפל בזה
         Status = status;
         StartPoint = startPoint;
@@ -37,7 +41,7 @@ public class Ride {
         ClientEmail = clientEmail;
     }
 
-    public int getRideID() {
+    public long getRideID() {
         return RideID;
     }
 
@@ -62,17 +66,17 @@ public class Ride {
         EndPoint = endPoint;
     }
 
-    public SimpleDateFormat getStartTime() {
+    public String getStartTime() {
         return StartTime;
     }
-    public void setStartTime(SimpleDateFormat startTime) {
+    public void setStartTime(String startTime) {
         StartTime = startTime;
     }
 
-    public SimpleDateFormat getEndTime() {
+    public String getEndTime() {
         return EndTime;
     }
-    public void setEndTime(SimpleDateFormat endTime) {
+    public void setEndTime(String endTime) {
         EndTime = endTime;
     }
 
@@ -83,10 +87,10 @@ public class Ride {
         ClientName = clientName;
     }
 
-    public long getClientPhoneNumber() {
+    public String getClientPhoneNumber() {
         return ClientPhoneNumber;
     }
-    public void setClientPhoneNumber(long clientPhoneNumber) {
+    public void setClientPhoneNumber(String clientPhoneNumber) {
         ClientPhoneNumber = clientPhoneNumber;
     }
 
