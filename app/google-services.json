@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "282762656367",
+    "firebase_url": "https://mydbapplicationgettaxi.firebaseio.com",
+    "project_id": "mydbapplicationgettaxi",
+    "storage_bucket": "mydbapplicationgettaxi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282762656367:android:3a5f4594b6284edf",
+        "android_client_info": {
+          "package_name": "com.example.shira.control"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282762656367-5ie8ms3m8cnmr82cnrovs6naorimjum3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiaULHlVxNdzb0tRzpGkbBCxK6TclJyd0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282762656367:android:679f6f20495c951d",
+        "android_client_info": {
+          "package_name": "com.example.shira.myapplication_gettaxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282762656367-21kjhgf7705k7499igl41ni2goufjt01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shira.myapplication_gettaxi",
+            "certificate_hash": "96154fc7971c108a8403b1caec4e21d859247bb5"
+          }
+        },
+        {
+          "client_id": "282762656367-5ie8ms3m8cnmr82cnrovs6naorimjum3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiaULHlVxNdzb0tRzpGkbBCxK6TclJyd0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282762656367-5ie8ms3m8cnmr82cnrovs6naorimjum3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
