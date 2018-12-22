@@ -1,4 +1,5 @@
 package model.datasource;
+import model.backend.Backend;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,10 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import entities.Ride;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class Firebase_DBManager {
-   /** public class Firebase_DBManager {
+import java.util.List;
+import java.util.ArrayList;
+import entities.Ride;
+import model.backend.BackendFactory;
+
+/*public class Firebase_DBManager implements Backend{
+
+
         public interface Action<T> {
             void onSuccess(T obj);
 
@@ -24,32 +32,35 @@ public class Firebase_DBManager {
 
             void onFailure(Exception exception);
         }
-    }
 
-    static DatabaseReference RidesRef;
-    static List<Ride> RideList;
+
+    static private DatabaseReference RidesRef;
+    static public List<Ride> RideList;
+    static Backend iBeckecnd;
 
     static {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        RidesRef = database.getReference("rides");
+        FirebaseDatabase database= (FirebaseDatabase) BackendFactory.getInstance();
+        RidesRef=database.getReference("Rides");
         RideList = new ArrayList<>();
     }
-    private static void addRideToFirebase(final Ride ride, final Action<Long> action)
-    {
-        String key = ride.getRideID().toString();
-        RidesRef.child(key).setValue(ride).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+
+    private static void addRideToFirebase(final Ride ride, final Action<Long> action) {
+        long key =ride.getRideID();
+        RidesRef.child(key).setValue(student).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                action.onSuccess(ride.getRideID());
-                action.onProgress("upload ride data", 100);
+                action.onSuccess(student.getId());
+                action.onProgress("upload student data", 100);
             }
-        }).addOnFailureListener(new OnFailureListener() {
+        }).addOnFailureListener( new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 action.onFailure(e);
-                action.onProgress("error upload ride data", 100);
+                action.onProgress("error upload student data", 100);
             }
         });
-    }**/
-}
+    }
+
+}*/
 

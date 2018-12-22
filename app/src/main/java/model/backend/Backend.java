@@ -12,7 +12,7 @@ public interface Backend {
     public void deleteRide(long rideID) throws Exception;
 
     /*3)*/
-    public void updateShop(Ride ride) throws Exception;
+    public void updateRide(Ride ride) throws Exception;
 
     /*4)*/ public ArrayList<Ride> getRideList () throws Exception;
 

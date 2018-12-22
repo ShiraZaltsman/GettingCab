@@ -9,6 +9,8 @@ public class Ride {
     public static long generateId() {
         return ++RideID;
     }
+
+    private long rideID;
     private RideStatus Status;
     private String StartPoint;
     private String EndPoint;
@@ -20,6 +22,7 @@ public class Ride {
 
     public Ride() {
         this.generateId();
+        this.rideID = RideID;
         this.Status = RideStatus.Available;//צריך לבדוק איך זה עובד
         this.StartPoint = "";
         this.EndPoint = "";
@@ -30,7 +33,7 @@ public class Ride {
         this.ClientEmail = "";
     }
     public Ride( RideStatus status, String startPoint, String endPoint, String startTime, String endTime, String clientName, String clientPhoneNumber, String clientEmail) {
-        RideID = 0;//לטפל בזה
+        rideID = RideID;
         Status = status;
         StartPoint = startPoint;
         EndPoint = endPoint;
@@ -42,7 +45,7 @@ public class Ride {
     }
 
     public long getRideID() {
-        return RideID;
+        return rideID;
     }
 
     public RideStatus getStatus() {
@@ -116,7 +119,8 @@ public class Ride {
             return false;
 
         Ride ride = (Ride) obj;
-        return (RideID == ride.getRideID() &&
+        return (
+                rideID == ride.getRideID() &&
                 ClientEmail == ride.getClientEmail()&&
                 StartPoint==ride.getStartPoint()&&
                 EndPoint==ride.getEndPoint()&&
@@ -127,6 +131,7 @@ public class Ride {
                 ClientPhoneNumber==ride.getClientPhoneNumber()
         );
     }
+
 }
 
 //test
