@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyApplication_GetTaxi</string>
     <string name="action_settings">Settings</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="done">Done</string>
+    <string name="pickup_time">PickUp time</string>
+    <string name="pickup_loctaion">PickUp Loctaion</string>
+    <string name="destination">Destination</string>
 </resources>
