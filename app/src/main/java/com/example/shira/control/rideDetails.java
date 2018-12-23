@@ -102,7 +102,7 @@ public class rideDetails extends AppCompatActivity implements View.OnClickListen
             tmp.addRide(newRide, new Firebase_DBManager.Action<Long>() {
                 @Override
                 public void onSuccess(Long obj) {
-                    
+
                 }
 
                 @Override
@@ -116,17 +116,8 @@ public class rideDetails extends AppCompatActivity implements View.OnClickListen
                 }
             });
         }
-        button_Done.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
 
-                        Firebase_DBManager tmp=new Firebase_DBManager();
-                        tmp.addRide(newRide,);
-                        //SimpleDateFormat sdf=new SimpleDateFormat("kk:mm");
-                        //newRide.setStartTime(sdf.parse(startEdit.).getTime());
 
-                    }
-                });
 
 
 
