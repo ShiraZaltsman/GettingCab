@@ -1,22 +1,18 @@
 package model.datasource;
 import model.backend.Backend;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import android.support.annotation.NonNull;
 
 import java.util.List;
 import java.util.ArrayList;
 import entities.Ride;
 import model.backend.BackendFactory;
 
-/*public class Firebase_DBManager implements Backend{
+public class Firebase_DBManager implements Backend{
 
 
         public interface Action<T> {
@@ -44,23 +40,31 @@ import model.backend.BackendFactory;
         RideList = new ArrayList<>();
     }
 
+    /*
+     * Insert Ride with the data from the user to firebase database
+     * @param ride - the ride initialized with user's data.
+     * @param action - implementation of Action interface, which defines what will happen in the insertion of the data
+     * @throws Exception when succeded or failed.
+     *********************************************** it should be static, but i can't do it for some reason...
+     * */
+    public void addRide(final Ride ride, final Action<Long> action) {
 
-    private static void addRideToFirebase(final Ride ride, final Action<Long> action) {
-        long key =ride.getRideID();
-        RidesRef.child(key).setValue(student).addOnSuccessListener(new OnSuccessListener<Void>() {
+        String key=((Long)ride.getRideID()).toString();
+
+        RidesRef.child(key).setValue(ride).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                action.onSuccess(student.getId());
-                action.onProgress("upload student data", 100);
+                action.onSuccess(ride.getRideID());
+                action.onProgress("upload ride data", 100);
             }
         }).addOnFailureListener( new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 action.onFailure(e);
-                action.onProgress("error upload student data", 100);
+                action.onProgress("error upload ride data", 100);
             }
         });
     }
 
-}*/
+}
 

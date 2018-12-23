@@ -32,9 +32,9 @@ public class Ride {
         this.ClientPhoneNumber ="";
         this.ClientEmail = "";
     }
-    public Ride( RideStatus status, String startPoint, String endPoint, String startTime, String endTime, String clientName, String clientPhoneNumber, String clientEmail) {
+    public Ride( String startPoint, String endPoint, String startTime, String endTime, String clientName, String clientPhoneNumber, String clientEmail) {
         rideID = RideID;
-        Status = status;
+        Status = RideStatus.Available;
         StartPoint = startPoint;
         EndPoint = endPoint;
         StartTime = startTime;
