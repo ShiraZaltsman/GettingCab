@@ -97,6 +97,14 @@ private TextWatcher DetailTextWatcher=new TextWatcher() {
         String timeInput=startEdit.getText().toString().trim();
         String locInput = locationEdit.getText().toString().trim();
         String DesInput = DestinationEdit.getText().toString().trim();
+        if (!locInput.isEmpty())
+        {
+            Toast toastM =Toast.makeText(DetailRideActivity.this, "current location",
+                    Toast.LENGTH_SHORT);
+
+            toastM.setGravity(Gravity.END, 0, 0);
+            toastM.show();
+        }
         button_Done.setEnabled(!(nameInput.isEmpty() || phoneInput.isEmpty() || emailInput.isEmpty() ||timeInput.isEmpty() ||locInput.isEmpty() ||DesInput.isEmpty()));
     }
 
@@ -139,6 +147,7 @@ private TextWatcher DetailTextWatcher=new TextWatcher() {
 
                     }
                 });
+
                 Toast toast =Toast.makeText(DetailRideActivity.this, "Your cab is on the way!",
                         Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
