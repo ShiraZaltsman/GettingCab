@@ -65,7 +65,7 @@ public class Firebase_DBManager implements Backend {
             }
         });
     }
-   //אין לי מושג מה זה בירוק, יש מצב שזה מה שהעתקתי מהOSF ושיניתי את השנות כדי שיתאים לנו, או שזה מה שאת עשית, בכל מקרה אחרי העדכון זה היה לי הכול בהערות
+
 
 
   /** static DatabaseReference rideRef;

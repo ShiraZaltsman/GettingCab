@@ -9,7 +9,10 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.view.Gravity;
 import android.widget.Button;
 import android.view.View;
 import android.view.Menu;
@@ -21,6 +24,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
@@ -49,6 +53,12 @@ public class DetailRideActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_ride);
         findViews();
+        //enables adRide Button only if all the textboxes are filled in
+        if (!(nameEdit.getText().length() == 0 || phoneEdit.getText().length() == 0|| startEdit.getText().length() == 0
+                || emailEdit.getText().length() == 0 || locationEdit.getText().length() == 0 || DestinationEdit.getText().length() == 0  ))
+        {
+            button_Done.setEnabled(true);
+        }
     }
 
     private void findViews() {
@@ -59,16 +69,50 @@ public class DetailRideActivity extends AppCompatActivity implements View.OnClic
         startEdit = (EditText) findViewById(R.id.PickUpTimeText);
         locationEdit = (EditText) findViewById(R.id.loctionAddress);
         DestinationEdit = (EditText) findViewById(R.id.destinationTtext);
+
         button_Done.setOnClickListener(this);
+        button_Done.setEnabled(false);//will be enable when all fields will be filled
+
+        nameEdit.addTextChangedListener(DetailTextWatcher);
+        emailEdit.addTextChangedListener(DetailTextWatcher);
+        phoneEdit.addTextChangedListener(DetailTextWatcher);
+        startEdit.addTextChangedListener(DetailTextWatcher);
+        locationEdit.addTextChangedListener(DetailTextWatcher);
+        DestinationEdit.addTextChangedListener(DetailTextWatcher);
+
     }
 
+    //this func activait when  any text change and enable "done" button when all fields has new text in them
+private TextWatcher DetailTextWatcher=new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        String nameInput=nameEdit.getText().toString().trim();
+        String phoneInput =phoneEdit.getText().toString().trim();
+        String emailInput=emailEdit.getText().toString().trim();
+        String timeInput=startEdit.getText().toString().trim();
+        String locInput = locationEdit.getText().toString().trim();
+        String DesInput = DestinationEdit.getText().toString().trim();
+        button_Done.setEnabled(!(nameInput.isEmpty() || phoneInput.isEmpty() || emailInput.isEmpty() ||timeInput.isEmpty() ||locInput.isEmpty() ||DesInput.isEmpty()));
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+};
     //thats important incase we create more than one button. And we will create.
     @Override
     public void onClick(View v) {
 
-        validate();// chack if data is valid befor saving
-        if (v == button_Done) {
 
+        if (v == button_Done) {
+            istValidText = false;
+            validate();// chack if data is valid befor saving
             if (istValidText) {
                 Firebase_DBManager tmp = new Firebase_DBManager();
 
@@ -95,6 +139,10 @@ public class DetailRideActivity extends AppCompatActivity implements View.OnClic
 
                     }
                 });
+                Toast toast =Toast.makeText(DetailRideActivity.this, "Your cab is on the way!",
+                        Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         }
     }
