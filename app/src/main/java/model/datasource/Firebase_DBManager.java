@@ -68,30 +68,7 @@ public class Firebase_DBManager implements Backend {
 
 
 
-  /** static DatabaseReference rideRef;
-    static {
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        rideRef = database.getReference("rides");
-    }
-   @Override
-   public void addRide(final Ride ride, final Action<String> action) throws Exception {
-       final Map<String, Object> dataMap = new HashMap<String, Object>();
-       rideRef.push().setValue(ride).addOnSuccessListener(new OnSuccessListener<Void>() {
-           @Override
-           public void onSuccess(Void aVoid) {
-               action.onSuccess(" insert ride");
-               action.onProgress("upload ride data", 100);
-           }
-       }).addOnFailureListener(new OnFailureListener() {
-           @Override
-           public void onFailure(@NonNull Exception e) {
-               action.onFailure(e);
-               action.onProgress("error upload ride data", 100);
-
-           }
-       });**/
-       //זה העתקתי מרחלי ושזה נראה בסדר בנתיים
    }
 
 

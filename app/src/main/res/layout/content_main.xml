@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="#FFF9C4"
+    >
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -18,46 +20,50 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="88dp"
+        android:backgroundTint="@color/shadeOfGray"
         android:clickable="true"
         app:backgroundTint="@color/common_google_signin_btn_text_light_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:src="@drawable/plus"
+        />
 
     <TextView
         android:id="@+id/getCabLabel"
-        android:layout_width="177dp"
-        android:layout_height="57dp"
+        android:layout_width="309dp"
+        android:layout_height="59dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="4dp"
-        android:text="Get a cab now"
-        android:textSize="36sp"
+        android:text="Get a cab"
+        android:textSize="55sp"
         android:textStyle="bold"
-        app:fontFamily="casual"
+        app:fontFamily="@font/aclonica"
         app:layout_constraintBottom_toTopOf="@+id/slogenLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/slogenLabel"
-        android:layout_width="122dp"
-        android:layout_height="82dp"
+        android:layout_width="212dp"
+        android:layout_height="137dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="68dp"
         android:gravity="center"
         android:text="Anytime Anywhere"
-        android:textSize="24sp"
-        app:fontFamily="casual"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/aclonica"
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
