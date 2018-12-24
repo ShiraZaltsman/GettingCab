@@ -5,6 +5,7 @@
     android:id="@+id/detailsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF9C4"
     tools:context="com.example.shira.control.DetailRideActivity">
 
     <EditText
@@ -66,6 +67,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="36dp"
         android:text="@string/done"
+        android:background="@color/shadeOfGray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
